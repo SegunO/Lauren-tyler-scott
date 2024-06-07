@@ -49,53 +49,25 @@
             margin: 20px auto;
             max-width: 80%;
         }
-        .media-player-container {
+        .spotify-embed-container {
             margin: 20px auto;
             max-width: 80%;
             position: relative;
-            text-align: center; /* Center the media player container */
+            text-align: center; /* Center the spotify embed container */
         }
-        .media-player {
-            display: inline-flex; /* Change to inline-flex for centering */
-            align-items: center;
-            justify-content: space-between; /* Adjust alignment */
+        .spotify-embed {
+            display: inline-block; /* Change to inline-block for centering */
             background-color: rgba(0, 0, 0, 0.8);
-            padding: 10px 20px;
+            padding: 20px;
             border-radius: 10px;
             width: 100%; /* Ensure it spans the width */
             max-width: 600px; /* Limit width for slender appearance */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
-        .media-player img {
-            width: 40px; /* Adjust size for slender look */
-            height: 40px;
-            margin-right: 20px;
-            border-radius: 5px;
-        }
-        .media-player .info {
-            flex: 1;
-        }
-        .media-player .info h3 {
-            margin: 0;
-            color: white;
-            font-size: 1em; /* Slightly smaller for better fit */
-        }
-        .media-player .info p {
-            margin: 0;
-            color: #ccc;
-            font-size: 0.8em; /* Slightly smaller for better fit */
-        }
-        .media-player button {
-            background-color: #2d2d2d;
+        .spotify-embed iframe {
+            width: 100%; /* Full width */
             border: none;
-            color: white;
-            padding: 8px 12px; /* Adjust padding for better fit */
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 0.9em; /* Slightly smaller for better fit */
-        }
-        .media-player button:hover {
-            background-color: #444444;
+            height: 80px; /* Adjust height to fit Spotify player */
         }
         .coming-soon {
             margin-bottom: 40px; /* Move the text up by reducing the margin-bottom */
@@ -120,19 +92,15 @@
             .content {
                 padding: 100px 10px 10px 10px;
             }
-            .media-player-container, .hero {
+            .spotify-embed-container, .hero {
                 width: 100%;
             }
-            .media-player {
+            .spotify-embed {
                 max-width: 100%; /* Allow full width on smaller screens */
                 padding: 10px 15px;
             }
-            .media-player img {
-                margin-right: 10px;
-            }
-            .media-player button {
-                padding: 8px 10px; /* Adjust padding for better fit */
-                font-size: 0.8em;
+            .spotify-embed iframe {
+                height: 60px; /* Adjust height for smaller screens */
             }
         }
     </style>
@@ -149,35 +117,14 @@
     
     <div class="content">
         <h1 class="coming-soon">EP COMING SOON</h1>
-        <div class="media-player-container">
-            <div class="media-player">
-                <img src="LTS-logo.png" alt="Album Art">
-                <div class="info">
-                    <h3>Twenties</h3>
-                    <p>Lauren Tyler Scott</p>
-                </div>
-                <button id="playPauseBtn">Play</button>
-                <audio id="audioPlayer" src="twenties-LTS.m4a"></audio>
+        <div class="spotify-embed-container">
+            <div class="spotify-embed">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2CVwZ1Cjrh4NEnYSxaUcdY?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
         </div>
         <div class="hero">
             <img src="Lauren-pic-1.webp" alt="Band Image" class="hero">
         </div>
     </div>
-
-    <script>
-        const playPauseBtn = document.getElementById('playPauseBtn');
-        const audioPlayer = document.getElementById('audioPlayer');
-
-        playPauseBtn.addEventListener('click', () => {
-            if (audioPlayer.paused) {
-                audioPlayer.play();
-                playPauseBtn.textContent = 'Pause';
-            } else {
-                audioPlayer.pause();
-                playPauseBtn.textContent = 'Play';
-            }
-        });
-    </script>
 </body>
 </html>
