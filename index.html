@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code.Wars Band</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('Lauren-background.webp') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center; /* Center align the navbar items */
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1;
+            flex-wrap: wrap; /* Allow wrapping but limit the height */
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 10px; /* Reduced padding for better fit */
+            text-align: center;
+            flex: 1; /* Ensure even distribution */
+            max-width: 150px; /* Limit width on small screens */
+        }
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        .logo {
+            width: 180px; /* Adjust the size of the logo */
+            margin: 70px auto 20px auto; /* Position it below the navbar */
+            display: block;
+        }
+        .content {
+            padding: 140px 20px 20px 20px;
+            text-align: center;
+        }
+        .hero {
+            margin: 20px auto;
+            max-width: 80%;
+        }
+        .media-player-container {
+            margin: 20px auto;
+            max-width: 80%;
+            position: relative;
+            text-align: center; /* Center the media player container */
+        }
+        .media-player {
+            display: inline-flex; /* Change to inline-flex for centering */
+            align-items: center;
+            justify-content: space-between; /* Adjust alignment */
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            border-radius: 10px;
+            width: 100%; /* Ensure it spans the width */
+            max-width: 600px; /* Limit width for slender appearance */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .media-player img {
+            width: 40px; /* Adjust size for slender look */
+            height: 40px;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+        .media-player .info {
+            flex: 1;
+        }
+        .media-player .info h3 {
+            margin: 0;
+            color: white;
+            font-size: 1em; /* Slightly smaller for better fit */
+        }
+        .media-player .info p {
+            margin: 0;
+            color: #ccc;
+            font-size: 0.8em; /* Slightly smaller for better fit */
+        }
+        .media-player button {
+            background-color: #2d2d2d;
+            border: none;
+            color: white;
+            padding: 8px 12px; /* Adjust padding for better fit */
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 0.9em; /* Slightly smaller for better fit */
+        }
+        .media-player button:hover {
+            background-color: #444444;
+        }
+        .coming-soon {
+            margin-bottom: 40px; /* Move the text up by reducing the margin-bottom */
+        }
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .navbar {
+                justify-content: space-between;
+                flex-wrap: wrap; /* Ensure navbar wraps but does not cover logo */
+            }
+            .navbar a {
+                flex: none; /* Remove flex for even distribution */
+                width: auto; /* Allow full width */
+                padding: 10px 10px;
+                margin: 5px 0;
+                text-align: center;
+            }
+            .logo {
+                width: 150px; /* Adjusted for mobile */
+                margin: 50px auto 20px auto;
+            }
+            .content {
+                padding: 100px 10px 10px 10px;
+            }
+            .media-player-container, .hero {
+                width: 100%;
+            }
+            .media-player {
+                max-width: 100%; /* Allow full width on smaller screens */
+                padding: 10px 15px;
+            }
+            .media-player img {
+                margin-right: 10px;
+            }
+            .media-player button {
+                padding: 8px 10px; /* Adjust padding for better fit */
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="lauren-spotify.html">Listen</a>
+        <a href="upcoming-shows.html">Upcoming Shows</a>
+        <a href="lauren-subscribe.html">Subscribe</a>
+    </div>
+
+    <img src="LTS-logo.png" alt="LTS Logo" class="logo">
+    
+    <div class="content">
+        <h1 class="coming-soon">EP COMING SOON</h1>
+        <div class="media-player-container">
+            <div class="media-player">
+                <img src="LTS-logo.png" alt="Album Art">
+                <div class="info">
+                    <h3>Twenties</h3>
+                    <p>Lauren Tyler Scott</p>
+                </div>
+                <button id="playPauseBtn">Play</button>
+                <audio id="audioPlayer" src="twenties 1/31.m4a"></audio>
+            </div>
+        </div>
+        <div class="hero">
+            <img src="Lauren-pic-1.webp" alt="Band Image" class="hero">
+        </div>
+    </div>
+
+    <script>
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const audioPlayer = document.getElementById('audioPlayer');
+
+        playPauseBtn.addEventListener('click', () => {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playPauseBtn.textContent = 'Pause';
+            } else {
+                audioPlayer.pause();
+                playPauseBtn.textContent = 'Play';
+            }
+        });
+    </script>
+</body>
+</html>
