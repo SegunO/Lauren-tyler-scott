@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listen - Lauren Tyler Scott</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('Lauren-background.webp') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center; /* Center align the navbar items */
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1;
+            flex-wrap: wrap; /* Allow wrapping but limit the height */
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 10px; /* Reduced padding for better fit */
+            text-align: center;
+            flex: 1; /* Ensure even distribution */
+            max-width: 150px; /* Limit width on small screens */
+        }
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        .content {
+            padding: 140px 20px 20px 20px;
+            text-align: center;
+        }
+        .spotify-embed {
+            margin: 0 auto;
+            max-width: 80%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .spotify-embed iframe {
+            width: 100%;
+            border: none;
+        }
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .navbar {
+                justify-content: space-between;
+                flex-wrap: wrap; /* Ensure navbar wraps but does not cover logo */
+            }
+            .navbar a {
+                flex: none; /* Remove flex for even distribution */
+                width: auto; /* Allow full width */
+                padding: 10px 10px;
+                margin: 5px 0;
+                text-align: center;
+            }
+            .content {
+                padding: 100px 10px 10px 10px;
+            }
+            .spotify-embed {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="lauren-spotify.html">Listen</a>
+        <a href="upcoming-shows.html">Upcoming Shows</a>
+        <a href="lauren-subscribe.html">Subscribe</a>
+    </div>
+
+    <div class="content">
+        <h1>Listen to Lauren Tyler Scott's Latest EP</h1>
+        <div class="spotify-embed">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/05ke7xkdhOaAOIJJIv5DxX?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </div>
+</body>
+</html>
